@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gamelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="261dp"
+        android:layout_height="252dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:clickable="false"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="263dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/summer5"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/petgif"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:outlineProvider="bounds"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.672"
+            app:srcCompat="@drawable/brown_dog_idle"
+            tools:ignore="ContentDescription" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/feedbutton"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/feed"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.712" />
+
+    <ProgressBar
+        android:id="@+id/feedbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="252dp"
+        android:layout_height="25dp"
+        android:indeterminateBehavior="repeat"
+        android:progress="100"
+        android:progressTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
+    <Button
+        android:id="@+id/sleepbutton"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/sleep"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <ProgressBar
+        android:id="@+id/sleepbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="252dp"
+        android:layout_height="25dp"
+        android:indeterminateBehavior="repeat"
+        android:progress="100"
+        android:progressTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <Button
+        android:id="@+id/cleanbutton"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/clean"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845" />
+
+    <ProgressBar
+        android:id="@+id/cleanbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="252dp"
+        android:layout_height="25dp"
+        android:indeterminateBehavior="repeat"
+        android:progress="100"
+        android:progressTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83" />
+
+    <TextView
+        android:id="@+id/petname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/name"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
+</androidx.constraintlayout.widget.ConstraintLayout>

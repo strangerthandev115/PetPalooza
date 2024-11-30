@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/petlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/checkbutton"
+        android:layout_width="60dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/checkmark"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951" />
+
+    <Button
+        android:id="@+id/option1"
+        android:layout_width="48dp"
+        android:layout_height="61dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/_1"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <Button
+        android:id="@+id/option2"
+        android:layout_width="48dp"
+        android:layout_height="61dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/_2"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <Button
+        android:id="@+id/catbutton"
+        android:layout_width="133dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/cat"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dogbutton"
+        android:layout_width="133dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/dog"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/petselect"
+        android:layout_width="311dp"
+        android:layout_height="90dp"
+        android:fontFamily="@font/gamefont"
+        android:text="@string/please_select_a_pet"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157"
+        tools:ignore="TextSizeCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="261dp"
+        android:layout_height="252dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:clickable="false"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="263dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/summer5" />
+
+        <ImageView
+            android:id="@+id/petgif"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:outlineProvider="bounds"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.672"
+            app:srcCompat="@drawable/brown_dog_idle" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

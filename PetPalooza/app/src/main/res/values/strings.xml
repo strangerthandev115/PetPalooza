@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pet Palooza</string>
+    <string name="dog">Dog</string>
+    <string name="cat">Cat</string>
+    <string name="please_select_a_pet">Please select a pet!</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="name">Name</string>
+    <string name="please_name_your_pet">Please name your pet!</string>
+    <string name="checkmark">✔</string>
+    <string name="feed">feed</string>
+    <string name="sleep">sleep</string>
+    <string name="clean">clean</string>
+    <string name="pet_palooza">Pet Palooza</string>
+    <string name="start_game">Start Game</string>
+    <string name="new_adoption">new adoption</string>
+    <string name="uh_oh_name_ran_away_since_they_weren_t_cared_for">Uh oh! Name ran away since they weren\'t cared for!</string>
+</resources>
