@@ -22,7 +22,7 @@ public class GameplayActivity extends AppCompatActivity {
     private Pet pet;
     private Handler handler;
     private Runnable progressUpdater;
-    private final int UPDATE_INTERVAL = 1000; // Update every minute
+    private final int UPDATE_INTERVAL = 60000; // Update every minute
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +90,9 @@ public class GameplayActivity extends AppCompatActivity {
 
     private void depleteStats() {
         // Decrease stats gradually
-        pet.setHunger(Math.max(0, pet.getHunger() - 10));       // Decrease hunger by 1
-        pet.setCleanliness(Math.max(0, pet.getCleanliness() - 10)); // Decrease cleanliness by 1
-        pet.setEnergy(Math.max(0, pet.getEnergy() - 10));       // Decrease energy by 1
+        pet.setHunger(Math.max(0, pet.getHunger() - 1));       // Decrease hunger by 1
+        pet.setCleanliness(Math.max(0, pet.getCleanliness() - 1)); // Decrease cleanliness by 1
+        pet.setEnergy(Math.max(0, pet.getEnergy() - 1));       // Decrease energy by 1
         checkGameOver();
     }
     private void adjustProgressBars() {
