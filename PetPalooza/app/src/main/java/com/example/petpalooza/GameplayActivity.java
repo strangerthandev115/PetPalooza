@@ -30,8 +30,8 @@ public class GameplayActivity extends AppCompatActivity {
     private Pet pet;
     private Handler handler;
     private Runnable progressUpdater;
-    //private final int UPDATE_INTERVAL = 60000; // Update every minute
-    private final int UPDATE_INTERVAL = 100; // Update every 1/10th of second
+    private final int UPDATE_INTERVAL = 60000; // Update every minute
+    //private final int UPDATE_INTERVAL = 100; // Update every 1/10th of second
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
