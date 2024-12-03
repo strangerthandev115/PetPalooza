@@ -32,5 +32,5 @@ google-services.json
 # Android Profiling
 *.hprof
 
-Other
+# Other
 .DS_Store
