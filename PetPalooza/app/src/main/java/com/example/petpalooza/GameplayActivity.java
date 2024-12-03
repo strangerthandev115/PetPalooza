@@ -1,15 +1,23 @@
 package com.example.petpalooza;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Base64;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.bumptech.glide.Glide;
 import java.io.ByteArrayOutputStream;
@@ -23,6 +31,7 @@ public class GameplayActivity extends AppCompatActivity {
     private Handler handler;
     private Runnable progressUpdater;
     private final int UPDATE_INTERVAL = 60000; // Update every minute
+    //private final int UPDATE_INTERVAL = 100; // Update every 1/10th of second
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -254,6 +263,9 @@ public class GameplayActivity extends AppCompatActivity {
         if (pet.getHunger() == 0 && pet.getCleanliness() == 0 && pet.getEnergy() == 0) {
             // Navigate to game over screen and delete the pet data from SharedPreferences
             goToGameOverScreen();
+        } else if (pet.getHunger() == 20 || pet.getCleanliness() == 20 || pet.getEnergy() == 20) {
+            // Send the player a notification to take care of their pet
+            sendPetNotification();
         }
     }
 
@@ -261,6 +273,37 @@ public class GameplayActivity extends AppCompatActivity {
         Intent gameOverIntent = new Intent(GameplayActivity.this, GameOverActivity.class);
         startActivity(gameOverIntent);
         finish();  // Close the current activity
+    }
+
+    private void sendPetNotification() {
+        Log.d("sendPetNotification", "Notification should be sent");
+        // Configure notification intent (where the user is sent when they tap the notification)
+        Intent intent = new Intent();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        String petType;
+        if (pet.getType().contains("Dog")) petType = "dog";
+        else petType = "cat";
+
+        String notificationMessage = "Your " + petType + " " + pet.getName() + " needs attention!";
+
+        // Build the notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "com.example.petpalooza")
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle(pet.getName() + " needs attention!")
+                .setContentText(notificationMessage)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(notificationMessage))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0, builder.build());
     }
 
 
