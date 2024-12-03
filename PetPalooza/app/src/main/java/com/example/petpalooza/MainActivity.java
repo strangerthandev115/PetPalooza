@@ -1,12 +1,17 @@
 package com.example.petpalooza;
 
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
@@ -17,6 +22,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_screen); // Link to start_screen.xml
+
+        // Create the notification channel
+        CharSequence name = "ChannelName";
+        String description = "ChannelDescription";
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel("com.example.petpalooza", name, importance);
+        channel.setDescription(description);
+        // Register the channel with the system
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        notificationManager.createNotificationChannel(channel);
+
+        // Ensure notification permission is enabled
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 1);
+        }
 
         // Find the start button by its ID
         Button startButton = findViewById(R.id.startbutton);
