@@ -60,6 +60,42 @@ Once launched, the user will:
 
 ---
 
+## 🧪 Model Evaluation Instructions
+
+To evaluate, test, or update **Pet Palooza**, please follow the expected input flow and file structure outlined below. This app simulates a virtual pet experience where the user interacts with their pet via buttons to manage three core needs: **feeding**, **cleaning**, and **sleeping**.
+
+---
+
+### ✅ Required Inputs & Context by Screen
+
+| Activity               | Required Inputs                                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **MainActivity**       | Tap the **Start Game** button to begin the pet adoption process                                                 |
+| **NameSelectActivity** | Enter a **pet name** in the text field and press the **Checkmark** button                                       |
+| **PetSelectActivity**  | Tap the **Dog** or **Cat** button, then select a **Color Option (1 or 2)**, then press the **Checkmark** button |
+| **GameplayActivity**   | Use the three buttons to interact: **Feed**, **Clean**, and **Sleep**                                           |
+| **GameOverActivity**   | Tap the **New Adoption** button to restart the game                                                             |
+
+---
+
+### ⏱️ Time-Based Stat Decay
+
+* Once in `GameplayActivity`, the pet’s stats begin **decreasing over time** (via a handler).
+* If all stats reach **0**, the game will transition to the **Game Over** screen.
+
+---
+
+### 🔄 App Flow Summary
+
+1. **Launch App** → `MainActivity`
+2. **Start Game** → `NameSelectActivity`
+3. **Enter Name + Confirm** → `PetSelectActivity`
+4. **Choose Pet Type + Color + Confirm** → `GameplayActivity`
+5. **Interact or Wait for Game Over** → `GameOverActivity`
+6. **Tap New Adoption** → Return to Start
+
+---
+
 ## 📁 Project Structure Highlights
 
 ```
